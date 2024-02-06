@@ -115,7 +115,7 @@ python inference.py --images_path 'path/to/folder/test_v2' --scaling 6
 Note: your scaling param in train and in inference must be the same, if you run command above, it will load my trained models, where segmentation model has scaling=6
 
 ## Prediction examples
-![example](./images/output1.png)
+
 ![example](./images/output2.png)
 ![example](./images/output3.png)
 ![example](./images/output4.png)
