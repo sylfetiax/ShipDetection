@@ -7,21 +7,21 @@ import os
 #global variables
 IMAGE_SIZE = 768 # image size, using integer as all images are square
 SCALING = 6 # grid size for cropping the image for segmentation model, in this case it's 6x6 grid
-CL_MODEL_ID = '1tC_bRap1f4FlrEhDF7gBrLvmgijjTP7Y'
-SEG_MODEL_ID = '1Nj7Ddr8fgS_JnHhq08jdeM9VLJmuR6YU'
-SEG_BATCH_SIZE = 8 
+CL_MODEL_ID = '1tC_bRap1f4FlrEhDF7gBrLvmgijjTP7Y' # model ids for downloading
+SEG_MODEL_ID = '1Nj7Ddr8fgS_JnHhq08jdeM9VLJmuR6YU' 
+SEG_BATCH_SIZE = 8 # model batch sizes
 CL_BATCH_SIZE = 8
-SEG_TEST_SIZE = 0.3
+SEG_TEST_SIZE = 0.3 # test size fraction for trainings
 CL_TEST_SIZE = 0.3
-TRAIN_PATH = './data/train_v2'
+TRAIN_PATH = './data/train_v2' 
 TEST_PATH = './data/test_v2'
 MASKS_PATH = '/data/train_ship_segmentation_v2'
-SEG_EPOCHS = 20
+SEG_EPOCHS = 20 # model training epochs
 CL_EPOCHS = 20
 SEG_SAVE_PATH = '.'
 CL_SAVE_PATH = '.'
 
-#@tf.keras.utils.register_keras_serializable(package='Custom', name='dice_score')
+
 def dice_coefficient(y_true, y_pred, smooth=1e-5):
     """
     Compute the Dice Score coefficient.
@@ -47,7 +47,7 @@ def dice_coefficient(y_true, y_pred, smooth=1e-5):
 
     return dice_coefficient
 
-#@tf.keras.utils.register_keras_serializable(package='Custom', name='dice_binary_cross_entropy')
+
 def dice_binary_cross_entropy(y_true, y_pred):
     """
     Compute the combined loss of Binary Crossentropy and Dice Score.
@@ -71,7 +71,7 @@ def dice_binary_cross_entropy(y_true, y_pred):
 
     return combined_loss
 
-#@tf.keras.utils.register_keras_serializable(package='Custom', name='f1_score')
+
 def f1_score(y_true, y_pred):
     """
     Compute the F1 score metric for binary classification.
@@ -95,6 +95,7 @@ def f1_score(y_true, y_pred):
     f1 = 2 * ((precision * recall) / (precision + recall + K.epsilon()))
 
     return f1
+
 
 def load_model_from_gdrive(id, destination_path):
     """
