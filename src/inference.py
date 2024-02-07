@@ -59,7 +59,7 @@ def inference_image(image_path, resnet_model, unet_model, scaling):
 
     # Check if the image is classified as having a ship (confidence above 0.5)
     if classification_result[0] < 0.5:
-        return np.nan  # Return NaN if confidence is below the threshold
+        return ''  # Return blank value
 
     # Perform segmentation using the UNet model
     segmentation_result = predict_unet(image, unet_model, scaling)
