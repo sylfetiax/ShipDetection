@@ -83,6 +83,14 @@ val_dice_coefficient: 0.7623
 
 Metrics for training and validation data may differ due to data leak. In discussions prior to this competition on the Kaggle platform, individuals noted that there are images in the dataset that intersect.
 
+## Submission score
+
+Training dataset is really huge, even after filtering data for training both models. I had to reduce the number of images to about 20%, therefore training time for each model was about 8 hours. Training on all data would take too much time to complete.
+
+![Score](./images/submission.png)
+
+Submission score would have been higher if i had better hardware to train models on all the data.
+
 ## Deployment
 
 Set up project
