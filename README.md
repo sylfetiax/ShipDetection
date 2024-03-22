@@ -1,5 +1,5 @@
 
-# Airbus Ship Detection Test Task
+# Airbus Ship Detection 
 
 ## Ship data
 
